@@ -16,22 +16,22 @@ public class CartObjectsTest {
 		setUp();
 		findItemTest();
 		checkoutTest();
-//		tearDown();
+		//tearDown();
 
 	}
 	public static void setUp() {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
-	//	driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		//	driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
-		//	driver.manage().window().maximize();
+		driver.manage().window().maximize();
 	}
 
 	public static void findItemTest() {
 		CartObjects cartObj = new CartObjects(driver);
 		cartObj.findItem(itemsNeeded);
 	}
-	
+
 	public static void checkoutTest() {
 		CartObjects cartObj = new CartObjects(driver);
 		cartObj.checkout();
